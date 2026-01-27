@@ -56,9 +56,3 @@ The repository is organized as follows:
 - .vscode/
 
 ---
-
-## Notes
-
-- Each project is designed to be runnable independently.
-- Intermediate artifacts are saved to allow rapid experimentation without retraining.
-- Future projects may explore additional domains, models, or learning paradigms.
