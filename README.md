@@ -28,4 +28,5 @@ Key components include:
 
 This project serves as a complete example of a **realistic multilabel NLP pipeline**, including label imbalance, sparsity, and threshold calibration.
 
+![Alt text](hep_ph_keyword_tagging/plot.png)
 
