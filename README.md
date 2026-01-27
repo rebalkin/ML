@@ -28,6 +28,17 @@ Key components include:
 
 This project serves as a complete example of a **realistic multilabel NLP pipeline**, including label imbalance, sparsity, and threshold calibration.
 
+<p align="center">
+  <img src="hep_ph_keyword_tagging/plot.png" alt="Micro and macro F1 vs threshold" width="900">
+</p>
+
+<p align="center">
+  <em><sub>
+    Figure: Micro and macro-averaged F1 score vs decision threshold for several values of the regularization parameter α.
+  </sub></em>
+</p>
+
+
 ![Micro- and macro-averaged F1 score as a function of the decision threshold for several values of the regularization parameter 𝛼](hep_ph_keyword_tagging/plot.png)
 <span style="font-size: 0.15em;">Figure: Micro- and macro-averaged F1 score as a function of the decision threshold for several values of the regularization parameter 𝛼. Performance is primarily controlled by the threshold choice, with both metrics peaking around thresholds 0.1−0.2. Variations in α have a comparatively minor effect once within a reasonable range, indicating that the model is not strongly sensitive to regularization. As expected, macro-F1 is systematically lower than micro-F1, reflecting the difficulty of predicting less frequent keywords.</span>
 
