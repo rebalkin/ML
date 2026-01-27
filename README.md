@@ -13,7 +13,7 @@ The emphasis is on:
 
 ## Projects
 
-### [Automatic Keyword Tagging for hep-ph Papers](notebooks/Heston.ipynb)
+### [Automatic Keyword Tagging for hep-ph Papers](hep_ph_keyword_tagging/main.ipynb)
 
 A multilabel NLP project that predicts INSPIRE-style keywords for high-energy physics phenomenology (hep-ph) abstracts.
 
