@@ -34,7 +34,7 @@ This project serves as a complete example of a **realistic multilabel NLP pipeli
 
 <p align="center">
   <em><sub>
-   igure: Micro- and macro-averaged F1 score as a function of the decision threshold for several values of the regularization parameter 𝛼. Performance is primarily controlled by the threshold choice, with both metrics peaking around thresholds 0.1−0.2. Variations in α have a comparatively minor effect once within a reasonable range, indicating that the model is not strongly sensitive to regularization. As expected, macro-F1 is systematically lower than micro-F1, reflecting the difficulty of predicting less frequent keywords.
+   Figure: Micro- and macro-averaged F1 score as a function of the decision threshold for several values of the regularization parameter 𝛼. Performance is primarily controlled by the threshold choice, with both metrics peaking around thresholds 0.1−0.2. Variations in α have a comparatively minor effect once within a reasonable range, indicating that the model is not strongly sensitive to regularization. As expected, macro-F1 is systematically lower than micro-F1, reflecting the difficulty of predicting less frequent keywords.
   </sub></em>
 </p>
 
