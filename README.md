@@ -28,31 +28,4 @@ Key components include:
 
 This project serves as a complete example of a **realistic multilabel NLP pipeline**, including label imbalance, sparsity, and threshold calibration.
 
-Code and analysis live in:
-- <PROJECT_DIRECTORY>
-- <MAIN_NOTEBOOK>
 
-(Replace the placeholders above with the actual paths.)
-
----
-
-## Repository Structure
-
-The repository is organized as follows:
-
-- <PROJECT_DIRECTORY>/  
-  Domain-specific machine learning project  
-  - data_collection.py  
-  - preprocessing.py  
-  - feature_engineering.py  
-  - modeling.py  
-  - utils.py  
-
-- <MAIN_NOTEBOOK>  
-  End-to-end analysis notebook
-
-- README.md  
-- .gitignore  
-- .vscode/
-
----
