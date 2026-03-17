@@ -51,7 +51,7 @@ Both a linear and a nonlinear (ReLU) version are treated with fully closed-form 
 - Numerical quantification of where and how this leading-order description breaks down at finite $p_i$
 
 <p align="center">
-  <img src="superposition_toy_model/phase_diagram.png" alt="Phase diagram" width="600">
+  <img src="superposition/phase_diagram.png" alt="Phase diagram" width="600">
 </p>
 
 <p align="center">
