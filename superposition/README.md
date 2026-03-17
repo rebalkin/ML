@@ -105,7 +105,7 @@ Phase diagram from a $40^3 = 64{,}000$-point grid scan. Colour shows the numeric
 | 2 | Monte Carlo validation at $N \in \{10^2, 10^4, 10^6\}$ samples |
 | 3.1 | Collapse test: does $q_i = I_i p_i$ fully determine the phase? |
 | 3.2 | Phase diagram in the $(q_1, q_2)$ plane; leading-order boundaries verified |
-| 3.3 | Finite-$p$ corrections: phase boundaries in the $(p_1, p_2)$ plane at fixed $I_2$ |
+| 3.3 | Finite p corrections: phase boundaries in the $(p_1, p_2)$ plane at fixed $I_2$ |
 
 ---
 
