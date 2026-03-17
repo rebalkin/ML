@@ -85,7 +85,7 @@ At $\theta = 3\pi/4$ the ReLU separates the two features: feature 1 activates th
 
 ![Phase diagram](phase_diagram_4d_scan.png)
 
-*Phase diagram from a $40^3 = 64,000$-point grid scan. Colour shows the numerically optimal $\theta^*$; dashed lines mark the predicted phase boundaries $q_2/q_1 \in \{1/3, 3\}$.*
+Phase diagram from a $40^3 = 64,000$-point grid scan. Colour shows the numerically optimal $\theta^*$; dashed lines mark the predicted phase boundaries $q_2/q_1 \in \{1/3, 3\}$.
 
 ---
 
