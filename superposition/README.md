@@ -66,7 +66,7 @@ $$\frac{I_2}{I_1} = \frac{p_1 \left(1 - \tfrac{3}{4}p_1\right)}{p_2 \left(1 - \t
 
 ### Nonlinear (ReLU) model: superposition emerges
 
-With a ReLU output the expected loss decomposes into four terms $A$–$D$ according to which features are active. Each term is computed exactly via six closed-form auxiliary integrals ($F_n$, $G$ for single-feature samples, and $\mathcal{F}_n$, $\mathcal{H}$, $\mathcal{G}$ for the double-feature case), all derived by integrating ReLU power laws over uniform distributions. Full definitions are in the notebook and in `Notes/superposition_toy_model_notes.pdf`.
+With a ReLU output the expected loss decomposes into four terms $A$–$D$ according to which features are active. Each term is computed exactly via six closed-form auxiliary integrals, all derived by integrating ReLU power laws over uniform distributions. Full definitions are in the notebook and in `Notes/superposition_toy_model_notes.pdf`.
 
 Minimising over $(\theta, b_1, b_2)$ reveals a **three-phase structure**. Since $\mathcal{L}$ scales linearly in $I_1$, the phase depends on only three free parameters: $I_2/I_1$, $p_1$, $p_2$. At leading order in $p_i$, the boundaries collapse further onto the single combination $q_i = I_i p_i$, the **effective scarcity** of each feature:
 
