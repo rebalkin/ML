@@ -79,7 +79,7 @@ Minimising over $(\theta, b_1, b_2)$ reveals a **three-phase structure**. Since 
 
 At $\theta = 3\pi/4$ the ReLU separates the two features: feature 1 activates the neuron positively, feature 2 activates it negatively, and the nonlinearity disambiguates them at readout. **This superposition minimum is absent in the linear model** — the ReLU is the minimal ingredient required.
 
-![Phase diagram](phase_diagram.png)
+<img src="phase_diagram.png" width="700"/>
 
 Phase diagram from a $40^3 = 64{,}000$-point grid scan. Colour shows the numerically optimal $\theta^*$; dashed lines mark the predicted phase boundaries $q_2/q_1 \in \{1/3, 3\}$.
 
