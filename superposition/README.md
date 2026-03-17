@@ -29,15 +29,15 @@ Neural networks can represent **more features than they have neurons** by storin
 
 Both notebooks study a one-hidden-unit autoencoder that compresses $n = 2$ features into $m = 1$ latent dimension:
 
-$$h = wx, \qquad x' = f(w^T h + b)$$
+$$h_J = w x_J, \qquad x'_J = f(w^T h_J + b)$$
 
-where $w = (\cos\theta,\, \sin\theta)$ and $f$ is either the identity (linear) or ReLU (nonlinear).
+where $w = (\cos\theta,\, \sin\theta)$ and $f$ is either the identity (linear) or ReLU (nonlinear). Here $J = 1,\ldots,k$ indexes samples and $i = 1, 2$ indexes features.
 
-**Input distribution.** Each feature $x_i$ is i.i.d.: zero with probability $1 - p_i$, $\text{Uniform}[0, 1]$ with probability $p_i$. The sparsity $p_i \ll 1$ is the key parameter enabling superposition.
+**Input distribution.** Each $x_{Ji}$ is i.i.d.: zero with probability $1 - p_i$, $\text{Uniform}[0, 1]$ with probability $p_i$. The sparsity $p_i \ll 1$ is the key parameter enabling superposition.
 
-**Loss.** Weighted MSE:
+**Loss.** Weighted MSE averaged over the dataset:
 
-$$\mathcal{L} = \frac{1}{2} \sum_i I_i (x_i - x'_i)^2$$
+$$\mathcal{L} = \frac{1}{2k}\sum_J \sum_i I_i (x_{Ji} - x'_{Ji})^2$$
 
 For large batches $\mathcal{L}$ concentrates on its mean $E[\mathcal{L}]$, which is derived analytically in both cases.
 
@@ -67,11 +67,7 @@ $$\frac{I_2}{I_1} = \frac{p_1 \left(1 - \tfrac{3}{4}p_1\right)}{p_2 \left(1 - \t
 
 ### Nonlinear (ReLU) model — superposition emerges
 
-With a ReLU output the expected loss decomposes into four terms $A$–$D$ according to which features are active. Each term is computed exactly via closed-form auxiliary integrals:
-
-$$F_n(\alpha,\beta) = \int_0^1 \mathrm{ReLU}(\alpha x + \beta)^n\,dx, \quad G(\alpha,\beta) = \int_0^1 x\,\mathrm{ReLU}(\alpha x + \beta)\,dx$$
-
-and their iterated counterparts $\mathcal{F}_n$, $\mathcal{H}$, $\mathcal{G}$ for the case where both features are simultaneously active.
+With a ReLU output the expected loss decomposes into four terms $A$–$D$ according to which features are active. Each term is computed exactly via six closed-form auxiliary integrals — $F_n$, $G$ for single-feature samples, and $\mathcal{F}_n$, $\mathcal{H}$, $\mathcal{G}$ for the double-feature case — all derived by integrating ReLU power laws over uniform distributions. Full definitions are in the notebook and in `Notes/ML_project.pdf`.
 
 Minimising over $(\theta, b_1, b_2)$ reveals a **three-phase structure**. Since $\mathcal{L}$ scales linearly in $I_1$, the phase depends on only three free parameters: $I_2/I_1$, $p_1$, $p_2$. At leading order in $p_i$, the boundaries collapse further onto the single combination $q_i = I_i p_i$, the **effective scarcity** of each feature:
 
@@ -83,9 +79,9 @@ Minimising over $(\theta, b_1, b_2)$ reveals a **three-phase structure**. Since 
 
 At $\theta = 3\pi/4$ the ReLU separates the two features: feature 1 activates the neuron positively, feature 2 activates it negatively, and the nonlinearity disambiguates them at readout. **This superposition minimum is absent in the linear model** — the ReLU is the minimal ingredient required.
 
-![Phase diagram](phase_diagram.png)
+![Phase diagram](phase_diagram_4d_scan.png)
 
-Phase diagram from a $40^3 = 64{,}000$-point grid scan. Colour shows the numerically optimal $\theta^*$; dashed lines mark the predicted phase boundaries $q_2/q_1 \in \{1/3, 3\}$.
+*Phase diagram from a $40^3 = 64{,}000$-point grid scan. Colour shows the numerically optimal $\theta^*$; dashed lines mark the predicted phase boundaries $q_2/q_1 \in \{1/3, 3\}$.*
 
 ---
 
