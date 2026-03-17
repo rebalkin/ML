@@ -19,8 +19,7 @@ Neural networks can represent **more features than they have neurons** by storin
 |:-----|:------------|
 | `linear_superposition_toy_model.ipynb` | Analytical + numerical study of the **linear** model |
 | `nonlinear_superposition_toy_model_v2.ipynb` | Analytical + numerical study of the **nonlinear (ReLU)** model |
-| `Notes/superposition_toy_model_notes.tex` | Full derivations in LaTeX |
-| `Notes/superposition_toy_model_notes.pdf` | Compiled PDF of the notes |
+| `Notes/superposition_toy_model_notes.pdf` | Full derivations (PDF) |
 | `*.png` | Phase diagrams and validation figures |
 
 ---
@@ -129,7 +128,7 @@ jupyter notebook nonlinear_superposition_toy_model_v2.ipynb
 
 ## Notes and derivations
 
-Full derivations of all analytical results, including the auxiliary integrals and phase boundary calculations, are in `Notes/superposition_toy_model_notes.tex` (compiled: `Notes/superposition_toy_model_notes.pdf`).
+Full derivations of all analytical results, including the auxiliary integrals and phase boundary calculations, are in `Notes/superposition_toy_model_notes.pdf`.
 
 ---
 
