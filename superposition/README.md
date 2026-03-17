@@ -1,4 +1,4 @@
-# Toy Models of Superposition — Linear & Nonlinear Analysis
+# Toy Models of Superposition: Linear and Nonlinear Analysis
 
 Analytical study of **feature superposition** in minimal autoencoders, extending the toy models from Elhage et al. (2022). Both a linear and a nonlinear (ReLU) version are treated, with fully closed-form expected-loss formulas verified against Monte Carlo simulation.
 
@@ -9,7 +9,7 @@ Analytical study of **feature superposition** in minimal autoencoders, extending
 
 ## What is superposition?
 
-Neural networks can represent **more features than they have neurons** by storing them in overlapping, near-orthogonal directions in activation space — a phenomenon called superposition. It is thought to underlie polysemanticity in large language models, where individual neurons respond to many unrelated concepts. Understanding when and why superposition occurs is a central question in mechanistic interpretability.
+Neural networks can represent **more features than they have neurons** by storing them in overlapping, near-orthogonal directions in activation space, a phenomenon called superposition. It is thought to underlie polysemanticity in large language models, where individual neurons respond to many unrelated concepts. Understanding when and why superposition occurs is a central question in mechanistic interpretability.
 
 ---
 
@@ -19,8 +19,8 @@ Neural networks can represent **more features than they have neurons** by storin
 |:-----|:------------|
 | `linear_superposition_toy_model.ipynb` | Analytical + numerical study of the **linear** model |
 | `nonlinear_superposition_toy_model_v2.ipynb` | Analytical + numerical study of the **nonlinear (ReLU)** model |
-| `Notes/ML_project.tex` | Full derivations in LaTeX |
-| `Notes/ML_project.pdf` | Compiled PDF of the notes |
+| `Notes/superposition_toy_model_notes.tex` | Full derivations in LaTeX |
+| `Notes/superposition_toy_model_notes.pdf` | Compiled PDF of the notes |
 | `*.png` | Phase diagrams and validation figures |
 
 ---
@@ -45,7 +45,7 @@ For large batches $\mathcal{L}$ concentrates on its mean $E[\mathcal{L}]$, which
 
 ## Key results
 
-### Linear model — no superposition
+### Linear model: no superposition
 
 The expected loss is a simple closed-form polynomial in $(\cos\theta, \sin\theta)$:
 
@@ -65,9 +65,9 @@ and then over $\theta$ reveals:
 
 $$\frac{I_2}{I_1} = \frac{p_1 \left(1 - \tfrac{3}{4}p_1\right)}{p_2 \left(1 - \tfrac{3}{4}p_2\right)}$$
 
-### Nonlinear (ReLU) model — superposition emerges
+### Nonlinear (ReLU) model: superposition emerges
 
-With a ReLU output the expected loss decomposes into four terms $A$–$D$ according to which features are active. Each term is computed exactly via six closed-form auxiliary integrals — $F_n$, $G$ for single-feature samples, and $\mathcal{F}_n$, $\mathcal{H}$, $\mathcal{G}$ for the double-feature case — all derived by integrating ReLU power laws over uniform distributions. Full definitions are in the notebook and in `Notes/ML_project.pdf`.
+With a ReLU output the expected loss decomposes into four terms $A$–$D$ according to which features are active. Each term is computed exactly via six closed-form auxiliary integrals ($F_n$, $G$ for single-feature samples, and $\mathcal{F}_n$, $\mathcal{H}$, $\mathcal{G}$ for the double-feature case), all derived by integrating ReLU power laws over uniform distributions. Full definitions are in the notebook and in `Notes/superposition_toy_model_notes.pdf`.
 
 Minimising over $(\theta, b_1, b_2)$ reveals a **three-phase structure**. Since $\mathcal{L}$ scales linearly in $I_1$, the phase depends on only three free parameters: $I_2/I_1$, $p_1$, $p_2$. At leading order in $p_i$, the boundaries collapse further onto the single combination $q_i = I_i p_i$, the **effective scarcity** of each feature:
 
@@ -77,11 +77,11 @@ Minimising over $(\theta, b_1, b_2)$ reveals a **three-phase structure**. Since 
 | **Superposition** | $q_1/3 < q_2 < 3q_1$ | $3\pi/4$ | Both features stored in antipodal directions |
 | Feature 2 only | $q_2 > 3q_1$ | $\pi/2$ | Network stores feature 2, ignores feature 1 |
 
-At $\theta = 3\pi/4$ the ReLU separates the two features: feature 1 activates the neuron positively, feature 2 activates it negatively, and the nonlinearity disambiguates them at readout. **This superposition minimum is absent in the linear model** — the ReLU is the minimal ingredient required.
+At $\theta = 3\pi/4$ the ReLU separates the two features: feature 1 activates the neuron positively, feature 2 activates it negatively, and the nonlinearity disambiguates them at readout. **This superposition minimum is absent in the linear model**; the ReLU is the minimal ingredient required.
 
-<img src="phase_diagram.png" width="500"/>
+![Phase diagram](phase_diagram_4d_scan.png)
 
-Phase diagram from a $40^3 = 64{,}000$-point grid scan. Colour shows the numerically optimal $\theta^*$; dashed lines mark the predicted phase boundaries $q_2/q_1 \in \{1/3, 3\}$.
+*Phase diagram from a $40^3 = 64{,}000$-point grid scan. Colour shows the numerically optimal $\theta^*$; dashed lines mark the predicted phase boundaries $q_2/q_1 \in \{1/3, 3\}$.*
 
 ---
 
@@ -105,13 +105,13 @@ Phase diagram from a $40^3 = 64{,}000$-point grid scan. Colour shows the numeric
 | 2 | Monte Carlo validation at $N \in \{10^2, 10^4, 10^6\}$ samples |
 | 3.1 | Collapse test: does $q_i = I_i p_i$ fully determine the phase? |
 | 3.2 | Phase diagram in the $(q_1, q_2)$ plane; leading-order boundaries verified |
-| 3.3 | Finite p corrections: phase boundaries in the $(p_1, p_2)$ plane at fixed $I_2$ |
+| 3.3 | Finite-$p$ corrections: phase boundaries in the $(p_1, p_2)$ plane at fixed $I_2$ |
 
 ---
 
 ## Setup
 
-No deep learning framework required — only standard scientific Python:
+No deep learning framework required; only standard scientific Python:
 
 ```bash
 pip install numpy pandas matplotlib
@@ -129,7 +129,7 @@ jupyter notebook nonlinear_superposition_toy_model_v2.ipynb
 
 ## Notes and derivations
 
-Full derivations of all analytical results — including the auxiliary integrals and phase boundary calculations — are in `Notes/ML_project.tex` (compiled: `Notes/ML_project.pdf`).
+Full derivations of all analytical results, including the auxiliary integrals and phase boundary calculations, are in `Notes/superposition_toy_model_notes.tex` (compiled: `Notes/superposition_toy_model_notes.pdf`).
 
 ---
 
