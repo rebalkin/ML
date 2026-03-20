@@ -39,7 +39,7 @@ This project serves as a complete example of a **realistic multilabel NLP pipeli
 
 ---
 
-### [Toy Models of Superposition: Linear and Nonlinear Analysis](superposition_toy_model/nonlinear_superposition_toy_model_v2.ipynb)
+### [Toy Models of Superposition: Linear and Nonlinear Analysis](superposition/nonlinear_superposition_toy_model_v2.ipynb)
 
 An analytical and numerical study of **feature superposition** in minimal autoencoders, extending the toy models from Elhage et al. (2022). The central question is when and why a neural network stores more features than it has neurons.
 
