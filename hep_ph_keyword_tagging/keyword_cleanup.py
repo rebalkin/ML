@@ -1,5 +1,5 @@
 import re
-from collections import Counter, defaultdict
+from collections import defaultdict
 # =========================================================
 # PATTERNS AND CURATED SETS
 # =========================================================

@@ -100,13 +100,7 @@ def get_data(from_Year=2000,
             size=min(N,1000),  
         )
         page = 0
-        cur_hits =0 
-        # r = requests.get(url, timeout=30)
-        # r.raise_for_status()
-        # data = r.json()
-
-        # hits = data["hits"]["hits"]
-        # records.extend(hits)
+        cur_hits = 0
 
         while url and page < 10:
             r = requests.get(url, timeout=30)

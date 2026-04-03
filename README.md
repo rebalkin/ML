@@ -12,6 +12,23 @@ The emphasis is on:
 
 ## Projects
 
+### [Scientific Impact and Novelty in Theoretical Particle Physics](hep_ph_impact_novelty/main.ipynb)
+
+An analysis of ~140,000 hep-ph papers from INSPIRE (2000-2025) using SPECTER2 embeddings.
+
+Key components include:
+- Data collection via the INSPIRE HEP API
+- SPECTER2 embeddings (BERT-based, pretrained on citation relationships)
+- Novelty score: cosine distance from the rolling field centroid
+- UMAP visualization of the embedding space
+- Binary impact classification (top 10% by citation rate within publication year)
+- Temporal train/test split to prevent data leakage
+- Out-of-sample prediction on 2025 papers
+
+Main findings: the novelty-impact relationship in hep-ph is consistently negative across subfields — papers that look semantically unusual tend to be cited less. SPECTER2 embeddings carry modest but real predictive signal for impact (ROC-AUC ~0.67); adding the novelty score does not improve performance.
+
+---
+
 ### [Automatic Keyword Tagging for hep-ph Papers](hep_ph_keyword_tagging/main.ipynb)
 
 A multilabel NLP project that predicts INSPIRE-style keywords for high-energy physics phenomenology (hep-ph) abstracts.

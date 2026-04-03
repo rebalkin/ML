@@ -1,4 +1,4 @@
-## [Automatic Keyword Tagging for hep-ph Papers](hep_ph_keyword_tagging/main.ipynb)
+## [Automatic Keyword Tagging for hep-ph Papers](main.ipynb)
 
 A multilabel NLP project that predicts INSPIRE-style keywords for high-energy physics phenomenology (hep-ph) abstracts.
 
@@ -22,6 +22,6 @@ This project serves as a complete example of a **realistic multilabel NLP pipeli
 - **parsing_data.py**  
   Utilities for querying and parsing raw metadata from the INSPIRE API into a structured format.
 
-- **word_cleanup.py**  
+- **keyword_cleanup.py**
   Keyword normalization and filtering logic used to clean, deduplicate, and prune noisy or uninformative labels before modeling.
 

@@ -1,0 +1,7 @@
+*.parquet
+*.pkl
+*.pickle
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store
+*.png
