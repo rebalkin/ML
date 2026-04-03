@@ -49,6 +49,14 @@ jupyter notebook main.ipynb
 
 The UMAP projection (`data/embedding_transformed.npy`) is generated separately — see `data/README.md` for the code snippet. Once saved, the notebook loads it directly.
 
+## Interpretation
+
+The negative novelty-impact relationship is real, but what it means is less obvious than it looks.
+
+SPECTER2 is trained on both abstract text and citation relationships, so the embedding reflects a mix of vocabulary and intellectual lineage. The novelty score conflates the two: a paper looks distant from the mainstream if it uses unusual terminology, if it cites a different set of papers, or both. A paper can be semantically distant while being physically identical to mainstream work (different language, same physics), and conversely, a genuinely original idea framed in familiar language and citing the usual references will look perfectly conventional.
+
+So the finding is probably not that physics punishes originality. It is more likely that the field rewards papers that speak the language of their community and engage with the appropriate literature — which is not the same thing. The 2025 out-of-sample predictions support this reading: the classifier's blind spots are concentrated in non-invertible symmetry papers, an emerging subfield with its own specialized vocabulary that sits in an unusual corner of embedding space but is clearly generating real scientific interest.
+
 ## Key results
 
 - SPECTER2 embeddings carry modest but real predictive signal for citation impact (ROC-AUC ~0.67 vs. 0.50 random baseline).
